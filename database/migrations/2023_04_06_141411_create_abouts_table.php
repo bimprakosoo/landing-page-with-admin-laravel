@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('description');
-            $table->string('visi');
-            $table->string('misi');
+            $table->text('description')->nullable();
+            $table->text('visi')->nullable();
+            $table->text('misi')->nullable();
             $table->timestamps();
         });
     }

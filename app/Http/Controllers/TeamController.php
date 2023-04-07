@@ -46,4 +46,15 @@ class TeamController extends Controller
       return redirect('/team')->with('error', 'Failed to insert data. ' . $e->getMessage());
     }
   }
+  
+  public function delete($id) {
+    try {
+    $team = Team::find($id);
+    $team->delete();
+    
+    return redirect('/team');
+    } catch (\Exception $e) {
+      return redirect('/team')->with('error', 'Failed to delete data. ' . $e->getMessage());
+    }
+  }
 }

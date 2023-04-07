@@ -30,4 +30,14 @@ class AuthController extends Controller
       return back()->withErrors(['error' => 'An error occurred.']);
     }
   }
+  
+  public function destroy()
+  {
+    try {
+    Auth::logout();
+    return redirect('/admin')->with(['success' => 'You\'ve been logged out.']);
+    } catch (\Exception $e) {
+      return back()->withErrors(['error' => 'An error occurred.']);
+    }
+  }
 }

@@ -22,7 +22,7 @@
                     <img src="{{ Storage::url($p->image) }}" alt="General" width="300" srcset="">
                   </td>
                   <td class="text-center">
-                    <a href="#" class="btn btn-xs btn-danger" onclick="deleteSlider('{{ $p->id }}')"
+                    <a href="#" class="btn btn-xs btn-danger" onclick="deleteBanner('{{ $p->id }}')"
                        data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>
@@ -79,24 +79,21 @@
       $('#image').click();
     }
 
-    $('#image').change(function () {
-      var imgPath = this.value;
-      var ext = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
-      if (ext == "gif" || ext == "png" || ext == "jpg" || ext == "jpeg")
-        readURL(this);
-      else
-        alert("Please select image file (jpg, jpeg, png).")
-    });
-
     function readURL(input) {
       if (input.files && input.files[0]) {
         var reader = new FileReader();
-        reader.readAsDataURL(input.files[0]);
-        reader.onload = function (e) {
+
+        reader.onload = function(e) {
           $('#preview').attr('src', e.target.result);
-        };
+        }
+
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
       }
     }
+
+    $("#image").change(function() {
+      readURL(this);
+    });
 
     function removeImage() {
       $('#image').val('');
@@ -116,5 +113,21 @@
         $(this).submit();
       }
     });
+
+    function deleteBanner(id) {
+      Swal.fire({
+        title: 'Apakah Anda Yakin ?',
+        text: "Anda tidak akan bisa mengambalikan data ini!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes'
+      }).then((result) => {
+        if (result.value) {
+          window.location.href = "{{ url('dashboard/delete/') }}" + '/' + id;
+        }
+      })
+    }
   </script>
 @endsection

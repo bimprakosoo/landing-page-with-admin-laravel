@@ -44,4 +44,15 @@ class DashboardController extends Controller
     }
   }
   
+  public function delete($id) {
+    try {
+      $dashboard = Dashboard::find($id);
+      $dashboard->delete();
+      
+      return redirect('/dashboard');
+    } catch (\Exception $e) {
+      return redirect('/dashboard')->with('error', 'Failed to delete data. ' . $e->getMessage());
+    }
+  }
+  
 }
