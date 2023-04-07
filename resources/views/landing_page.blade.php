@@ -199,23 +199,6 @@
   <!-- Slider/Intro Section Start -->
   <div class="intro10-section section section-fluid fix" data-bg-color="#fbf9f6">
 
-    <div class="container">
-      <div class="row">
-
-        <!-- Intro One Content Start -->
-        <div class="col-12" data-aos="fade-up">
-          <div class="intro10-content headline-active text-center">
-            <span class="sub-title">Hello, Im Matin</span>
-            <h2 class="title">Artist Coaching And Mentoring Might Be for You.</h2>
-            <a href="JavaScript:Void(0);" class="btn btn-primary-three btn-hover-secondary-three"> Free
-              consultation </a>
-          </div>
-        </div>
-        <!-- Intro One Content End -->
-
-      </div>
-    </div>
-
     <!-- Animation Shape Start -->
     <div class="shape shape-1">
     <span data-depth="3">

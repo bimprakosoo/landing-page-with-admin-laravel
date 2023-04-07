@@ -83,43 +83,15 @@
         <ul class="metismenu" id="side-menu">
           <li class="menu-title">Menu</li>
           <li>
-            <a href="index.html" class="waves-effect">
-              <i class="icon-accelerator"></i><span class="badge badge-success badge-pill float-right">9+</span> <span> Dashboard </span>
+            <a href="/dashboard" class="waves-effect">
+              <i class="icon-accelerator"></i><span> Dashboard </span>
             </a>
           </li>
-
           <li>
-            <a href="javascript:void(0);" class="waves-effect"><i class="icon-mail-open"></i><span> Email <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-            <ul class="submenu">
-              <li><a href="email-inbox.html">Inbox</a></li>
-              <li><a href="email-read.html">Email Read</a></li>
-              <li><a href="email-compose.html">Email Compose</a></li>
-            </ul>
+            <a href="/team" class="waves-effect">
+              <i class="icon-accelerator"></i><span> Team </span>
+            </a>
           </li>
-
-          <li>
-            <a href="calendar.html" class="waves-effect"><i class="icon-calendar"></i><span> Calendar </span></a>
-          </li>
-
-          <li>
-            <a href="javascript:void(0);" class="waves-effect"><i class="icon-paper-sheet"></i><span> Pages <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-            <ul class="submenu">
-              <li><a href="pages-pricing.html">Pricing</a></li>
-              <li><a href="pages-invoice.html">Invoice</a></li>
-              <li><a href="pages-timeline.html">Timeline</a></li>
-              <li><a href="pages-faqs.html">FAQs</a></li>
-              <li><a href="pages-maintenance.html">Maintenance</a></li>
-              <li><a href="pages-comingsoon.html">Coming Soon</a></li>
-              <li><a href="pages-starter.html">Starter Page</a></li>
-              <li><a href="pages-login.html">Login</a></li>
-              <li><a href="pages-register.html">Register</a></li>
-              <li><a href="pages-recoverpw.html">Recover Password</a></li>
-              <li><a href="pages-lock-screen.html">Lock Screen</a></li>
-              <li><a href="pages-404.html">Error 404</a></li>
-              <li><a href="pages-500.html">Error 500</a></li>
-            </ul>
-          </li>
-
         </ul>
 
       </div>
@@ -139,20 +111,6 @@
     <!-- Start content -->
     <div class="content">
       <div class="container-fluid">
-        <div class="page-title-box">
-          <div class="row align-items-center">
-            <div class="col-sm-6">
-              <h4 class="page-title"></h4>
-            </div>
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-right">
-                <li class="breadcrumb-item"><a href="javascript:void(0);">Stexo</a></li>
-                <li class="breadcrumb-item active">Dashboard</li>
-              </ol>
-            </div>
-          </div>
-          <!-- end row -->
-        </div>
         <!-- end page-title -->
         @yield('content')
         <!-- end row -->

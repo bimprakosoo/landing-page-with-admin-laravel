@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,13 @@ Route::get('/admin', function () {
 
 Route::post('/login', [AuthController::class, 'store']);
 
-Route::resource('dashboard', DashboardController::class);
+Route::group(['prefix' => 'dashboard'], function(){
+  Route::get('/', [DashboardController::class, 'index']);
+  Route::get('/delete/{id}', 'SliderController@delete_slider');
+  Route::post('/insert', [DashboardController::class, 'upload']);
+});
+
+Route::group(['prefix' => 'team'], function(){
+  Route::get('/', [TeamController::class, 'index']);
+  Route::post('/insert', [TeamController::class, 'insert']);
+});
